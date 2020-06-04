@@ -1,0 +1,26 @@
+variant: fcos
+version: 1.0.0
+passwd:
+  users:
+    - name: iqfeedkeepalive
+
+systemd:
+  units:
+    - name: nuget.service
+      enabled: true
+      contents: |
+        [Unit]
+        Description=IQFeed Keep Alive
+        After=network-online.target
+        Wants=network-online.target
+
+        [Service]
+        User=iqfeedkeepalive
+        TimeoutStartSec=0
+        ExecStartPre=-/bin/podman kill iqfeedkeepalive
+        ExecStartPre=-/bin/podman rm iqfeedkeepalive
+        ExecStartPre=/bin/podman pull okinta/stack-iqfeed-keep-alive
+        ExecStart=/bin/podman run --name iqfeedkeepalive okinta/iqfeed-keep-alive iqfeed-keep-alive -h iqfeed.in.okinta.ge
+
+        [Install]
+        WantedBy=multi-user.target
