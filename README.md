@@ -13,7 +13,8 @@ For more information about Alga, refer to the [alga-infra repository][1].
 
 ## What is this Stack?
 
-Runs [iqfeed-keep-alive] to prevent IQFeed from disconnecting and restarting.
+Runs [iqfeed-keep-alive][1] to prevent IQFeed from disconnecting and
+restarting.
 
 [1]: https://github.com/okinta/iqfeed-keep-alive
 
