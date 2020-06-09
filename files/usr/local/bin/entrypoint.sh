@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 #
 # Loads settings from the Vault, then loads iqfeed-keep-alive
