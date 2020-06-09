@@ -2,6 +2,7 @@ name: Publish
 
 on:
   - push
+  - repository_dispatch
 
 jobs:
   publish:
