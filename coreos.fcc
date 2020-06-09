@@ -19,8 +19,8 @@ systemd:
         TimeoutStartSec=0
         ExecStartPre=-/bin/podman kill iqfeedkeepalive
         ExecStartPre=-/bin/podman rm iqfeedkeepalive
-        ExecStartPre=/bin/podman pull okinta/iqfeed-keep-alive
-        ExecStart=/bin/podman run --name iqfeedkeepalive okinta/iqfeed-keep-alive iqfeed-keep-alive -h iqfeed.in.okinta.ge
+        ExecStartPre=/bin/podman pull okinta/stack-iqfeed-keep-alive
+        ExecStart=/bin/podman run --name iqfeedkeepalive okinta/stack-iqfeed-keep-alive
 
         [Install]
         WantedBy=multi-user.target
